@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { setModal, setModalContent } from "../../../reducers/imageReducer";
 import locationSvg from "./../../../assets/location.svg";
@@ -36,7 +36,6 @@ const ImageCard = ({
           <UserPhoto src={avatar} />
           <ImageAuthor>{author}</ImageAuthor>
         </Avatar>
-
         <Image style={customStyles} src={imgUrl} />
         {location && (
           <LocationContainer>
