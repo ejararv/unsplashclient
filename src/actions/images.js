@@ -20,7 +20,7 @@ export const getImages = (searchQuery, limit = 10) => {
       await console.log(response.data.results);
       await dispatch(setImages(response.data.results));
     } catch (error) {
-      alert(error.response.data.message);
+      console.log(error.response.data.message);
     } finally {
       dispatch(hideLoader());
     }
@@ -40,7 +40,7 @@ export const getOneImage = (id) => {
       await console.log(response.data);
       await dispatch(setCurrentImage(response.data));
     } catch (error) {
-      alert(error.response.data.message);
+      console.log(error.response.data.message);
     }
   };
 };
