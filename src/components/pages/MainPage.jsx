@@ -57,21 +57,23 @@ const MainPage = () => {
           onKeyPress={pressHandler}
           onChange={searchHandler}
         />
-        {prompts && (
-          <PromptContainer>
-            {images.map((i) =>
-              i.tags.map((t) =>
-                t.hasOwnProperty("title") ? (
-                  <Prompt onClick={() => clickHandler(t.title)}>
-                    {t.title}
-                  </Prompt>
-                ) : (
-                  <Prompt>Not found</Prompt>
+
+        <PromptContainer>
+          {prompts &&
+            images
+              .slice(0, 4)
+              .map((i) =>
+                i.tags.map((t) =>
+                  t.hasOwnProperty("title") ? (
+                    <Prompt onClick={() => clickHandler(t.title)}>
+                      {t.title}
+                    </Prompt>
+                  ) : (
+                    <Prompt>No results found</Prompt>
+                  )
                 )
-              )
-            )}
-          </PromptContainer>
-        )}
+              )}
+        </PromptContainer>
       </Header>
     </Container>
   );
@@ -85,7 +87,7 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   margin: auto;
-  background-image: url(${bg});
+  background: url(${bg}) center no-repeat;
   background-size: cover;
 `;
 const Header = styled.div`
@@ -95,20 +97,19 @@ const Header = styled.div`
   margin: 5rem;
 `;
 const PromptContainer = styled.div`
-  height: 20vh;
+  height: 10vh;
   display: flex;
-
-  align-content: flex-start;
-  overflow-y: auto;
+  flex-flow: wrap;
 `;
 const Prompt = styled.li`
   list-style: none;
   margin: 2px;
   height: fit-content;
+  width: fit-content;
+  position: relative;
   padding: 0.3vh 0.5vw;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 0.5rem;
-  width: 100%;
   padding: 1rem;
   border: none;
   color: #3c354e;

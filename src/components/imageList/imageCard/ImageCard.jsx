@@ -1,7 +1,8 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import styled from "styled-components";
 import { setModal, setModalContent } from "../../../reducers/imageReducer";
+import locationSvg from "./../../../assets/location.svg";
 
 const ImageCard = ({
   imgUrl,
@@ -13,7 +14,6 @@ const ImageCard = ({
   ...props
 }) => {
   const dispatch = useDispatch();
-  const modalDisplay = useSelector((state) => state.imagesList.modalDisplay);
 
   const handleClick = (e) => {
     dispatch(setModal("flex"));
@@ -32,14 +32,18 @@ const ImageCard = ({
   return (
     <ImageCardContainer onClick={(e) => handleClick(e)}>
       <ImageContainer>
-        
-          <Avatar image={avatar}>
-            <UserPhoto src={avatar} />
-            <ImageAuthor>{author}</ImageAuthor>
-          </Avatar>
-      
+        <Avatar>
+          <UserPhoto src={avatar} />
+          <ImageAuthor>{author}</ImageAuthor>
+        </Avatar>
+
         <Image style={customStyles} src={imgUrl} />
-        <ImageLocation>{location}</ImageLocation>
+        {location && (
+          <LocationContainer>
+            <LocationSvg src={locationSvg} />
+            <ImageLocation>{location}</ImageLocation>
+          </LocationContainer>
+        )}
       </ImageContainer>
     </ImageCardContainer>
   );
@@ -62,25 +66,36 @@ const ImageContainer = styled.div`
   flex-direction: column;
 `;
 
-const ImageAuthor = styled.div`
+const ImageAuthor = styled.p`
+  font-weight: 300;
+
+  margin: auto 0.5rem;
   left: 0;
-  bottom: 0;
   width: 100%;
 `;
 const ImageLocation = styled.div`
   left: 0;
   bottom: 0;
   width: 100%;
+  margin: auto 0.5rem;
+`;
+const LocationContainer = styled.div`
+  display: flex;
+`;
+const LocationSvg = styled.div`
+  width: 2vw;
+  height: 3vh;
+  background: url(${(props) => props.src}) no-repeat center;
 `;
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  break-inside: avoid;
 `;
 const Avatar = styled.div`
   display: flex;
-
-  width: 5vw;
+  align-content: flex-start;
+  font-size: 1.1rem;
+  width: 100%;
   height: 5vh;
   border-radius: 50%;
   background-image: url(${(props) => props.image});
@@ -88,6 +103,7 @@ const Avatar = styled.div`
 `;
 const UserPhoto = styled.img`
   border-radius: 50%;
+  margin: auto;
 `;
 
 export default ImageCard;

@@ -5,7 +5,6 @@ import { getImages } from "../../actions/images";
 import ImageList from "../imageList/ImageList";
 import HamsterLoader from "../UI/hamsterLoader/HamsterLoader";
 import Input from "../UI/input/input";
-import Modal from "../UI/modal/Modal";
 
 const ImagesPage = () => {
   const [search, setSearch] = useState("");
@@ -26,7 +25,7 @@ const ImagesPage = () => {
         (value) => {
           dispatch(getImages(value));
         },
-        600,
+        1000,
         e.target.value
       )
     );
@@ -41,7 +40,6 @@ const ImagesPage = () => {
   }
   return (
     <>
-      <Modal></Modal>
       <Header>
         <Input
           placeholder="Search free high-resolution photos"

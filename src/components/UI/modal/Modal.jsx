@@ -43,6 +43,7 @@ const ModalContainer = styled.div`
 const ModalContent = styled.div`
   background: #fff;
   padding: 20px;
+  margin: auto;
   border-radius: 0.5rem;
   display: flex;
   flex-direction: column;

@@ -7,13 +7,13 @@ const BASE_PATH = `https://api.unsplash.com/`;
 const SEARCH_PATH = `search/photos`;
 const PHOTOS = `photos/`;
 
-export const getImages = (searchQuery) => {
+export const getImages = (searchQuery, limit = 10) => {
   return async (dispatch) => {
     try {
       dispatch(showLoader());
       let URL = BASE_PATH + SEARCH_PATH;
       const response = await axios.get(URL, {
-        params: { query: searchQuery },
+        params: { query: searchQuery, per_page: limit },
         headers: { Authorization: `Client-ID ${ACCES_KEY}` },
       });
 
