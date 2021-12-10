@@ -25,8 +25,6 @@ const ImageCard = ({
         avatarUrl: avatar,
       })
     );
-    console.log(imgUrl);
-    console.log("flex");
   };
 
   return (
