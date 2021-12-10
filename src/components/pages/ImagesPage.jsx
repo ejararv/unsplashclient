@@ -9,7 +9,6 @@ import Input from "../UI/input/input";
 const ImagesPage = () => {
   const [search, setSearch] = useState("");
   const [searchTimeout, setSearchTimeout] = useState(false);
-
   const loader = useSelector((state) => state.app.loader);
   const dispatch = useDispatch();
 

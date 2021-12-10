@@ -12,8 +12,8 @@ const ImageList = () => {
       <>
         <ImageListContainer>
           {images.map((image) => (
-            <TransitionGroup>
-              <CSSTransition key={image.id} timeout={20}>
+            <TransitionGroup key={image.id}>
+              <CSSTransition  timeout={20}>
                 <ImageCard
                   imgUrl={image.urls.regular}
                   id={image.id}
