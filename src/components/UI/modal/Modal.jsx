@@ -7,7 +7,6 @@ import ImageCard from "../../imageList/imageCard/ImageCard";
 const Modal = (props) => {
   const modalDisplay = useSelector((state) => state.imagesList.modalDisplay);
   const modalData = useSelector((state) => state.imagesList.modalContent);
-
   const dispatch = useDispatch();
   return (
     <ModalContainer

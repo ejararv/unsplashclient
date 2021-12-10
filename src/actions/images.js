@@ -17,10 +17,9 @@ export const getImages = (searchQuery, limit = 10) => {
         headers: { Authorization: `Client-ID ${ACCES_KEY}` },
       });
 
-      await console.log(response.data.results);
       await dispatch(setImages(response.data.results));
     } catch (error) {
-      console.log(error.response.data.message);
+      alert(error.response.data.message);
     } finally {
       dispatch(hideLoader());
     }
@@ -37,10 +36,9 @@ export const getOneImage = (id) => {
         headers: { Authorization: `Client-ID ${ACCES_KEY}` },
       });
 
-      await console.log(response.data);
       await dispatch(setCurrentImage(response.data));
     } catch (error) {
-      console.log(error.response.data.message);
+      alert(error.response.data.message);
     }
   };
 };
