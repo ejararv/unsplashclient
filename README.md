@@ -61,3 +61,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Over the past 8 months,
+work in one team with high-level specialists in various fields,
+I understand that I have grown a lot
+in other words, I have significantly expanded my knowledge of various technologies: Tools, security, soft skills, approach to building architecture, maintaining code quality. I realized how important it is to communicate not only with my team,
+but also to look for useful people who can reasonably criticize and
+share their ideas.
+
+Thanks to a good team that knows how to get involved in the workflow,
+I started with small features. Next, a UI component was developed for manipulating artifacts using JFrog,
+the concept in which I presented my vision of User Experience: Structure, content, navigation and how the user interacts with elements, namely:
+combining several modules into one for more efficient use of the application and minimization of transitions, etc.,
+Then there was a need to quickly create a small SPA to demonstrate the capabilities of our services.
+The team and I then decided to develop reusable components, specific components as microfrontends, and npm packages (in the case of npm.
+I created a working prototype, which can be used later in any projects and teams of the company).
+
+In addition, it was necessary to solve the problem with e2e tests. The well-known Selenium web driver is used in the project.
+The problem was instability, difficulty in maintenance
+The problem was solved by replacing the technology and approach to testing.
+At the moment, I have finished integrating with Gherkin files, demonstrated to the team, implemented the daily chain testing run from the docker container without using a browser. This approach incredibly speeds up and stabilizes the testing process.
+
+Writing Jest and RTL tests.
+Daily continuous integration testing
+
+Over the past 7 months new technologies Artifactory, Jfrog api, Docker, Bamboo, RTL, Cypress, CI, Figma, Webpack, linter,
+
+1 code review of a component I worked on with an external front end team,
+from whom I adopted and implemented the best practices in our project
+and defending my point of view on some kind of critic only strengthened, expanded my knowledge about some things.
